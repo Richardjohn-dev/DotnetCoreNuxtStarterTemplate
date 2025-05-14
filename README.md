@@ -24,22 +24,63 @@ A modern authentication template built with ASP.NET Core backend and Nuxt 3 fron
 - SQL Server (or SQL Server Express)
 - Google OAuth credentials (for social login)
 
-### Backend Setup
-1. Set up user secrets for the backend:
-cd backend
-dotnet user-secrets init
-dotnet user-secrets set "Authentication:Google:ClientId" "your-google-client-id"
-dotnet user-secrets set "Authentication:Google:ClientSecret" "your-google-client-secret"
-dotnet user-secrets set "JWT:SecretKey" "your-secret-key"
-dotnet user-secrets set "ConnectionStrings:DefaultConnection" "your-connection-string"
+## 🔧 Backend Setup
 
-2. Run the backend:
-### Frontend Setup
+1. Set up user secrets:
+
+    ```bash
+    cd backend
+    dotnet user-secrets init
+    dotnet user-secrets set "Authentication:Google:ClientId" "your-google-client-id"
+    dotnet user-secrets set "Authentication:Google:ClientSecret" "your-google-client-secret"
+    dotnet user-secrets set "JWT:SecretKey" "your-secret-key"
+    ```
+
+2. Run the backend (replace with your actual run command if needed):
+
+    ```bash
+    dotnet run
+    ```
+
+---
+
+## 🌐 Frontend Setup
+
 1. Install dependencies:
-cd frontend
-npm install
-2. Run the frontend:
-npm run dev
+
+    ```bash
+    cd frontend
+    npm install
+    ```
+
+2. Set up local HTTPS certificates:
+
+    - Create a folder called `ssl` inside the `frontend` directory:
+
+        ```bash
+        mkdir ssl
+        ```
+
+    - Place your certificate files in the `ssl` folder:
+        - `localhost+2.pem`
+        - `localhost+2-key.pem`
+     
+          
+
+    > ⚠️ If you don't have these files, you can generate them using [mkcert](https://github.com/FiloSottile/mkcert).  
+    > Install it via [Chocolatey](https://chocolatey.org/) on Windows:
+    >
+    > ```bash
+    > choco install mkcert
+    > mkcert -install
+    > mkcert -key-file ssl/localhost+2-key.pem -cert-file ssl/localhost+2.pem localhost 127.0.0.1 ::1
+    > ```
+
+3. Run the frontend:
+
+    ```bash
+    npm run dev
+    ```
 
 
 ## Authentication Flow
