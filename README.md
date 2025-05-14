@@ -31,7 +31,6 @@ dotnet user-secrets init
 dotnet user-secrets set "Authentication:Google:ClientId" "your-google-client-id"
 dotnet user-secrets set "Authentication:Google:ClientSecret" "your-google-client-secret"
 dotnet user-secrets set "JWT:SecretKey" "your-secret-key"
-dotnet user-secrets set "ConnectionStrings:DefaultConnection" "your-connection-string"
 
 2. Run the backend:
 ### Frontend Setup
