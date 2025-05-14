@@ -24,21 +24,41 @@ A modern authentication template built with ASP.NET Core backend and Nuxt 3 fron
 - SQL Server (or SQL Server Express)
 - Google OAuth credentials (for social login)
 
-### Backend Setup
-1. Set up user secrets for the backend:
-cd backend
-dotnet user-secrets init
-dotnet user-secrets set "Authentication:Google:ClientId" "your-google-client-id"
-dotnet user-secrets set "Authentication:Google:ClientSecret" "your-google-client-secret"
-dotnet user-secrets set "JWT:SecretKey" "your-secret-key"
+## 🔧 Backend Setup
 
-2. Run the backend:
-### Frontend Setup
+1. Set up user secrets:
+
+    ```bash
+    cd backend
+    dotnet user-secrets init
+    dotnet user-secrets set "Authentication:Google:ClientId" "your-google-client-id"
+    dotnet user-secrets set "Authentication:Google:ClientSecret" "your-google-client-secret"
+    dotnet user-secrets set "JWT:SecretKey" "your-secret-key"
+    ```
+
+2. Run the backend (replace with your actual run command if needed):
+
+    ```bash
+    dotnet run
+    ```
+
+---
+
+## 🌐 Frontend Setup
+
 1. Install dependencies:
-cd frontend
-npm install
+
+    ```bash
+    cd frontend
+    npm install
+    ```
+
 2. Run the frontend:
-npm run dev
+
+    ```bash
+    npm run dev
+    ```
+
 
 
 ## Authentication Flow
