@@ -37,14 +37,8 @@ public static class ServicesRegistrationExtensions
         // Add controllers - this is the new line you need to add
         builder.Services.AddControllers();
 
-        // Add FluentValidation (optional if you want automatic validation)
-        //builder.Services.AddFluentValidationAutoValidation();
-
         // FastEndpoints and Swagger
         builder.Services.ConfigureFastEndpoints();
-
-        // Health checks
-        //services.ConfigureHealthChecks(configuration);
 
         return builder;
     }
@@ -213,8 +207,6 @@ public static class ServicesRegistrationExtensions
 
     public static IServiceCollection ConfigureSPACors(this IServiceCollection services, IConfiguration configuration)
     {
-        //var allowedOrigins = configuration.GetSection("AppSettings:CORS-Settings:Allow-Origins").Get<string[]>();
-
         services.AddCors(options =>
         {
             options.AddPolicy("AllowNuxtFrontend",

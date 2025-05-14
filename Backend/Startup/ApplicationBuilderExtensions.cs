@@ -37,8 +37,6 @@ public static class ApplicationBuilderExtensions
         app.UseAuthentication();
         app.UseAuthorization();
 
-        // Endpoints
-
         app.MapControllers();
 
         app.UseFastEndpoints(x => x.Errors.UseProblemDetails());
